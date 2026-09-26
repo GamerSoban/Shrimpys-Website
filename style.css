@@ -41,6 +41,8 @@ button {
   margin-bottom: 30px;
 }
 #secondsection {
+  display: flex;
+  flex-direction: column;
   width: 90%;
   max-width: 800px;
   overflow-wrap: break-word;
@@ -52,7 +54,22 @@ button {
   border-radius: 20px;
   box-shadow: 1px 1px 20px rgba(74, 56, 40, 0.5);
 }
+#thirdsection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-#thirdsection video {
+#thirdsection p {
+  font-size: large;
+  font-weight: bold;
+}
+#videosection {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+#videosection video {
   width: 200px;
 }
