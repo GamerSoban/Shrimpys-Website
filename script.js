@@ -10,6 +10,7 @@ const thirdButton = document.getElementById("thirdbutton");
 const envelopeLetterButton = document.getElementById("letterenvelope");
 const envelopeVideoButton = document.getElementById("videoenvelope");
 const envelopeMsgButton = document.getElementById("msgsenvelope");
+const messagesButton = document.getElementById("messagesbutton");
 
 secondSection.style.display = "none";
 thirdSection.style.display = "none";
@@ -62,4 +63,8 @@ envelopeVideoButton.addEventListener("click", () => {
 
 envelopeMsgButton.addEventListener("click", () => {
   switchSection(envelopeSection, fourthsection);
+});
+
+messagesButton.addEventListener("click", () => {
+  switchSection(fourthsection, envelopeSection);
 });
