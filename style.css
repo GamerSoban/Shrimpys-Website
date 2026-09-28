@@ -20,6 +20,8 @@ button {
   box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
 }
 #firstsection {
+  opacity: 1;
+  transition: opacity 0.5s ease;
   font-weight: bold;
   font-size: 70px;
   position: relative;
@@ -41,21 +43,27 @@ button {
   margin-bottom: 30px;
 }
 #secondsection {
+  opacity: 1;
+  transition: opacity 0.5s ease;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 90%;
   max-width: 800px;
   overflow-wrap: break-word;
-  margin-right: auto;
   margin-left: auto;
-  margin-bottom: 10dvh;
+  margin-right: auto;
+  margin-top: auto;
   padding: 20px;
   border: 2px solid #f765a3;
   border-radius: 20px;
   box-shadow: 1px 1px 20px rgba(74, 56, 40, 0.5);
 }
 #thirdsection {
+  opacity: 1;
+  transition: opacity 0.5s ease;
   display: flex;
+  min-height: 100dvh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -68,8 +76,23 @@ button {
 #videosection {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 10px;
 }
 #videosection video {
-  width: 200px;
+  width: 15%;
+}
+
+#thirdbutton {
+  margin-top: 20px;
+}
+
+#fourthsection {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,15 +1,25 @@
 const firstSection = document.getElementById("firstsection");
 const secondSection = document.getElementById("secondsection");
 const thirdSection = document.getElementById("thirdsection");
+const fourthsection = document.getElementById("fourthsection");
+const envelopeSection = document.getElementById("envelopesection");
 
 const firstButton = document.getElementById("buttonfirst");
 const secondButton = document.getElementById("secondbutton");
+const thirdButton = document.getElementById("thirdbutton");
+const envelopeLetterButton = document.getElementById("letterenvelope");
+const envelopeVideoButton = document.getElementById("videoenvelope");
+const envelopeMsgButton = document.getElementById("msgsenvelope");
 
 secondSection.style.display = "none";
 thirdSection.style.display = "none";
+fourthsection.style.display = "none";
+envelopeSection.style.display = "none";
 
 secondSection.style.opacity = "0";
 thirdSection.style.opacity = "0";
+fourthsection.style.opacity = "0";
+envelopeSection.style.opacity = "0";
 
 function switchSection(currentSection, nextSection) {
   // Start next section invisible
@@ -31,9 +41,25 @@ function switchSection(currentSection, nextSection) {
 }
 
 firstButton.addEventListener("click", () => {
-  switchSection(firstSection, secondSection);
+  switchSection(firstSection, envelopeSection);
 });
 
 secondButton.addEventListener("click", () => {
-  switchSection(secondSection, thirdSection);
+  switchSection(secondSection, envelopeSection);
+});
+
+thirdButton.addEventListener("click", () => {
+  switchSection(thirdSection, envelopeSection);
+});
+
+envelopeLetterButton.addEventListener("click", () => {
+  switchSection(envelopeSection, secondSection);
+});
+
+envelopeVideoButton.addEventListener("click", () => {
+  switchSection(envelopeSection, thirdSection);
+});
+
+envelopeMsgButton.addEventListener("click", () => {
+  switchSection(envelopeSection, fourthsection);
 });
