@@ -3,6 +3,9 @@ const secondSection = document.getElementById("secondsection");
 const thirdSection = document.getElementById("thirdsection");
 const fourthsection = document.getElementById("fourthsection");
 const envelopeSection = document.getElementById("envelopesection");
+const letterQuestionSection = document.getElementById("letterquestions")
+const videoQuestionSection = document.getElementById("videoquestions")
+const msgsQuestionSection = document.getElementById("msgssectionquestions")
 
 const firstButton = document.getElementById("buttonfirst");
 const secondButton = document.getElementById("secondbutton");
@@ -11,11 +14,21 @@ const envelopeLetterButton = document.getElementById("letterenvelope");
 const envelopeVideoButton = document.getElementById("videoenvelope");
 const envelopeMsgButton = document.getElementById("msgsenvelope");
 const messagesButton = document.getElementById("messagesbutton");
+const letterQanswersButton = document.querySelectorAll(".letterqoptions")
+const videoQanswersButton = document.querySelectorAll(".videoquestionoptions")
+const msgsQannswersButton = document.querySelectorAll(".msgsquestionoptions")
+
+const letterQuestion = document.getElementById("letterQtext")
+const videoQuestion = document.getElementById("videoQtext")
+const msgsQuestion = document.getElementById("msgsQtext")
 
 secondSection.style.display = "none";
 thirdSection.style.display = "none";
 fourthsection.style.display = "none";
 envelopeSection.style.display = "none";
+letterQuestionSection.style.display = "none";
+videoQuestionSection.style.display = "none";
+msgsQuestionSection.style.display = "none"
 
 secondSection.style.opacity = "0";
 thirdSection.style.opacity = "0";
