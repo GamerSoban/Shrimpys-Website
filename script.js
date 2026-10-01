@@ -22,18 +22,76 @@ const letterQuestion = document.getElementById("letterQtext")
 const videoQuestion = document.getElementById("videoQtext")
 const msgsQuestion = document.getElementById("msgsQtext")
 
+const LetterQuestions = [
+  {
+    question: "When is our anniversary?",
+    options: ["04/13", "02/14","03/11"],
+    correct: 0
+  },
+  {
+    question : "What day was it when we met?",
+    options: ["Christmas","Easter","Valentines"],
+    correct: 2
+  },
+  {
+    question: "What colour is my prayer mat?",
+    options: ["Baby Pink", "Hot Pink", "Dark Blue"],
+    correct: 0
+  }
+];
+const VideoQuestions = [
+  {
+    question: "Who is my main supplier of goofy videos RECENTLY?",
+    options: ["Shaheer", "Ismail", "Husnain"],
+    correct: 1
+  },
+  {
+    question: "What is my old nickname?",
+    options: ["Gulab", "Guriya", "Chilli Milli"],
+    correct: 2
+  },
+  {
+    question: "What is your favourite F1 Team?",
+    options: ["Red Bull", "Mclaren", "Ferrari"],
+    correct: 0
+  }
+];
+const MsgsQuestions = [
+  {
+    question: "Question 1",
+    options: ["option 1", "Option 2", "option 3"],
+    correct: 0
+  },
+  {
+    question: "Question 2",
+    options: ["options 1", "option 2", "Option 3"],
+    correct: 0
+  },
+  {
+    question: "Question 3",
+    options: ["Option1", "option 2", "option 3"],
+    correct: 0
+  }
+]
+
+let currentQuestion = 0;
+let currentQuestions;
+
 secondSection.style.display = "none";
 thirdSection.style.display = "none";
 fourthsection.style.display = "none";
 envelopeSection.style.display = "none";
 letterQuestionSection.style.display = "none";
 videoQuestionSection.style.display = "none";
-msgsQuestionSection.style.display = "none"
+msgsQuestionSection.style.display = "none";
 
 secondSection.style.opacity = "0";
 thirdSection.style.opacity = "0";
 fourthsection.style.opacity = "0";
 envelopeSection.style.opacity = "0";
+letterQuestionSection.style.opacity = "0";
+videoQuestionSection.style.opacity = "0";
+msgsQuestionSection.style.opacity = "0";
 
 function switchSection(currentSection, nextSection) {
   // Start next section invisible
@@ -53,6 +111,62 @@ function switchSection(currentSection, nextSection) {
     });
   }, 500);
 }
+function showQuestion(questiontext,answers) {
+  const question = currentQuestions[currentQuestion];
+
+  questiontext.textContent = question.question;
+  answers.forEach((answer, index)=>
+  {
+    answer.textContent = question.options[index];
+  });
+}
+
+letterQanswersButton.forEach((answer, index)=>
+{
+  answer.addEventListener("click",()=>
+  {
+    if (index === currentQuestions[currentQuestion].correct) {
+      currentQuestion++;
+      if (currentQuestion >= currentQuestions.length) {
+        switchSection(letterQuestionSection, secondSection);
+        return;
+      }
+      showQuestion(letterQuestion, letterQanswersButton);
+    }
+  });
+}); 
+videoQanswersButton.forEach((answer, index) => {
+    answer.addEventListener("click", () => {
+
+        if (index === currentQuestions[currentQuestion].correct) {
+            currentQuestion++;
+
+            if (currentQuestion >= currentQuestions.length) {
+                switchSection(videoQuestionSection, thirdSection);
+                return;
+            }
+
+            showQuestion(videoQuestion, videoQanswersButton);
+        }
+
+    });
+});
+msgsQannswersButton.forEach((answer, index) => {
+    answer.addEventListener("click", () => {
+
+        if (index === currentQuestions[currentQuestion].correct) {
+            currentQuestion++;
+
+            if (currentQuestion >= currentQuestions.length) {
+                switchSection(msgsQuestionSection, fourthsection);
+                return;
+            }
+
+            showQuestion(msgsQuestion, msgsQannswersButton);
+        }
+
+    });
+});
 
 firstButton.addEventListener("click", () => {
   switchSection(firstSection, envelopeSection);
@@ -67,15 +181,27 @@ thirdButton.addEventListener("click", () => {
 });
 
 envelopeLetterButton.addEventListener("click", () => {
-  switchSection(envelopeSection, secondSection);
+  currentQuestions = LetterQuestions;
+  currentQuestion = 0;
+
+  showQuestion(letterQuestion, letterQanswersButton);
+  switchSection(envelopeSection, letterQuestionSection);
 });
 
 envelopeVideoButton.addEventListener("click", () => {
-  switchSection(envelopeSection, thirdSection);
+  currentQuestions = VideoQuestions;
+  currentQuestion = 0;
+
+  showQuestion(videoQuestion, videoQanswersButton);
+  switchSection(envelopeSection, videoQuestionSection);
 });
 
 envelopeMsgButton.addEventListener("click", () => {
-  switchSection(envelopeSection, fourthsection);
+  currentQuestions = MsgsQuestions;
+  currentQuestion = 0;
+
+  showQuestion(msgsQuestion, msgsQannswersButton);
+  switchSection(envelopeSection, msgsQuestionSection);
 });
 
 messagesButton.addEventListener("click", () => {
