@@ -5,7 +5,6 @@ const fourthsection = document.getElementById("fourthsection");
 const envelopeSection = document.getElementById("envelopesection");
 const letterQuestionSection = document.getElementById("letterquestions")
 const videoQuestionSection = document.getElementById("videoquestions")
-const msgsQuestionSection = document.getElementById("msgssectionquestions")
 
 const firstButton = document.getElementById("buttonfirst");
 const secondButton = document.getElementById("secondbutton");
@@ -16,11 +15,9 @@ const envelopeMsgButton = document.getElementById("msgsenvelope");
 const messagesButton = document.getElementById("messagesbutton");
 const letterQanswersButton = document.querySelectorAll(".letterqoptions")
 const videoQanswersButton = document.querySelectorAll(".videoquestionoptions")
-const msgsQannswersButton = document.querySelectorAll(".msgsquestionoptions")
 
 const letterQuestion = document.getElementById("letterQtext")
 const videoQuestion = document.getElementById("videoQtext")
-const msgsQuestion = document.getElementById("msgsQtext")
 
 const LetterQuestions = [
   {
@@ -56,23 +53,6 @@ const VideoQuestions = [
     correct: 0
   }
 ];
-const MsgsQuestions = [
-  {
-    question: "Question 1",
-    options: ["option 1", "Option 2", "option 3"],
-    correct: 0
-  },
-  {
-    question: "Question 2",
-    options: ["options 1", "option 2", "Option 3"],
-    correct: 0
-  },
-  {
-    question: "Question 3",
-    options: ["Option1", "option 2", "option 3"],
-    correct: 0
-  }
-]
 
 let currentQuestion = 0;
 let currentQuestions;
@@ -83,7 +63,6 @@ fourthsection.style.display = "none";
 envelopeSection.style.display = "none";
 letterQuestionSection.style.display = "none";
 videoQuestionSection.style.display = "none";
-msgsQuestionSection.style.display = "none";
 
 secondSection.style.opacity = "0";
 thirdSection.style.opacity = "0";
@@ -91,7 +70,6 @@ fourthsection.style.opacity = "0";
 envelopeSection.style.opacity = "0";
 letterQuestionSection.style.opacity = "0";
 videoQuestionSection.style.opacity = "0";
-msgsQuestionSection.style.opacity = "0";
 
 function switchSection(currentSection, nextSection) {
   // Start next section invisible
@@ -151,22 +129,6 @@ videoQanswersButton.forEach((answer, index) => {
 
     });
 });
-msgsQannswersButton.forEach((answer, index) => {
-    answer.addEventListener("click", () => {
-
-        if (index === currentQuestions[currentQuestion].correct) {
-            currentQuestion++;
-
-            if (currentQuestion >= currentQuestions.length) {
-                switchSection(msgsQuestionSection, fourthsection);
-                return;
-            }
-
-            showQuestion(msgsQuestion, msgsQannswersButton);
-        }
-
-    });
-});
 
 firstButton.addEventListener("click", () => {
   switchSection(firstSection, envelopeSection);
@@ -197,11 +159,7 @@ envelopeVideoButton.addEventListener("click", () => {
 });
 
 envelopeMsgButton.addEventListener("click", () => {
-  currentQuestions = MsgsQuestions;
-  currentQuestion = 0;
-
-  showQuestion(msgsQuestion, msgsQannswersButton);
-  switchSection(envelopeSection, msgsQuestionSection);
+  switchSection(envelopeSection, fourthsection);
 });
 
 messagesButton.addEventListener("click", () => {
