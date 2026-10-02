@@ -5,6 +5,9 @@ html {
   color: #0b1354;
   background-color: #f9d1d1;
 }
+body {
+  margin: 0;
+}
 
 button {
   corner-shape: round;
@@ -58,6 +61,7 @@ button {
   box-shadow: 1px 1px 20px rgba(74, 56, 40, 0.5);
 }
 #thirdsection {
+  background-color: #B7E9F7 ;
   transition: opacity 0.5s ease;
   display: flex;
   min-height: 100dvh;
@@ -85,6 +89,7 @@ button {
 }
 
 #fourthsection {
+  background-color: #C0AFE2 ;
   transition: opacity 0.5s ease;
   display: flex;
   min-height: 100dvh;
@@ -124,10 +129,36 @@ button {
 }
 
 .messages {
+  background-color: #f9d1d1;
   padding: 20px;
   border: 2px solid #f765a3;
   border-radius: 20px;
   box-shadow: 1px 1px 20px rgba(74, 56, 40, 0.5);
   width: 90%;
   max-width: 800px;
+}
+
+#letterquestions,
+#videoquestions,
+#msgssectionquestions {
+  transition: opacity 0.5s ease;
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#letterquestions p,
+#videoquestions p,
+#msgssectionquestions p {
+  font-size: 40px;
+  padding: 20px;
+  border: 2px solid #f765a3;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px rgba(74, 56, 40, 0.5);
+}
+#letterquestionsoptions,
+#videoquestionsoptions,
+#msgsquestionsoptions {
+  flex-direction: row;
 }
