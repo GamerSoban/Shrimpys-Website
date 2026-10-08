@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Allura:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap");
 
 html {
   text-align: center;
@@ -26,7 +26,7 @@ button {
   box-shadow: 1px 1px 10px rgba(74, 56, 40, 0.5);
 }
 #firstsection {
-  background-color: #d2f4fd;
+  background-color: #e29c9c;
   transition: opacity 0.5s ease;
   font-weight: bold;
   font-size: 70px;
@@ -40,15 +40,15 @@ button {
 }
 
 .paper {
-    position: absolute;
-    width: 98%;
-    height: auto;
-    z-index: 0;
-    margin-bottom: 10px;
+  position: absolute;
+  width: 98%;
+  height: auto;
+  z-index: 0;
+  margin-bottom: 10px;
 }
 
 #firstsection p {
-  font-family: 'Mea Culpa', 'Allura', cursive;
+  font-family: "Mea Culpa", "Allura", cursive;
   flex: 1;
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@ button {
   box-shadow: 1px 1px 20px rgba(74, 56, 40, 0.5);
 }
 #thirdsection {
-  background-color: #B7E9F7 ;
+  background-color: #b7e9f7;
   transition: opacity 0.5s ease;
   display: flex;
   min-height: 100dvh;
@@ -109,7 +109,7 @@ button {
 }
 
 #fourthsection {
-  background-color: #C0AFE2 ;
+  background-color: #c0afe2;
   transition: opacity 0.5s ease;
   display: flex;
   min-height: 100dvh;
